@@ -65,7 +65,7 @@ public final class CardScanner: CardScannerProtocol {
                 }
             })
             request.recognitionLevel = .accurate
-            request.usesLanguageCorrection = true // false is meant to be better for numbers but overall I find it better with
+            request.usesLanguageCorrection = false // false is meant to be better for numbers but overall I find it better with
             request.customWords = (0...9).map { "\($0)" } + ["MISS", "MRS", "MS", "MR", "DR", "PROF"] // Not sure this helps
             request.minimumTextHeight = _regionOfInterest.unsafeValue == regionOfInterestDefault ? 0 : 0.1 // Signicantly reduces CPU load with some cards
             request.recognitionLanguages = ["en_US"]
