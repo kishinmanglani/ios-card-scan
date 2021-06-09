@@ -55,7 +55,7 @@ public class CameraPixelBufferStream: NSObject, PixelBufferStream, AVCaptureVide
             print("No device")
             return
         }
-        session.sessionPreset = device.supportsSessionPreset(.hd4K3840x2160) ? .hd4K3840x2160 : .hd1920x1080
+        session.sessionPreset = .hd1920x1080
         
         try? device.lockForConfiguration()
         if device.isAutoFocusRangeRestrictionSupported {
