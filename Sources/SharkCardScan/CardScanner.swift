@@ -127,14 +127,14 @@ public final class CardScanner: CardScannerProtocol {
                 if Self.shouldIgnore(observation.string) {
                     return
                 }
-                if let value = Self.extractHolder(observation.string,
-                                                  current: holder.currentMatch.value ?? "",
-                                                  bounds: bounds,
-                                                  numberBounds: numberDigitsOnly.bounds,
-                                                  expiryBounds: expiryInMonthsSince2000.bounds) {
-                    holder.process(newValue: value, observation: observation, bounds: bounds)
-                    return
-                }
+                //if let value = Self.extractHolder(observation.string,
+                //                                  current: holder.currentMatch.value ?? "",
+                //                                  bounds: bounds,
+                //                                  numberBounds: numberDigitsOnly.bounds,
+                //                                  expiryBounds: expiryInMonthsSince2000.bounds) {
+                //    holder.process(newValue: value, observation: observation, bounds: bounds)
+                //    return
+                //}
             }
         }
         guard numberDigitsOnly.currentMatch.hits > 1 else {
